@@ -1,9 +1,9 @@
 {
   "name": "helix-eye",
   "version": "'",
-  "description": "Helix Eye is an app that consumes the NASA's API to display their records",
+  "description": "SSR React app",
   "main": "index.js",
-  "author": "edevars <e.devars.dev@gmail.com>",
+  "author": "Danniel Navas",
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development webpack serve",
