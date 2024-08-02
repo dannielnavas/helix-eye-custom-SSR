@@ -6,9 +6,12 @@
   "author": "Danniel Navas",
   "license": "MIT",
   "scripts": {
+    "build-client": "webpack --config webpack.config.client.js",
     "build-server": "webpack --config webpack.config.server.js",
+    "build": "NODE_ENV=production pnpm run build-client && pnpm run build-server",
     "build-dev": "NODE_ENV=development pnpm run build-server && node --inspect dist/index.js",
-    "dev": "nodemon --watch ts --exec pnpm run build-dev"
+    "dev": "nodemon --watch ts --exec pnpm run build-dev",
+    "start": "NODE_ENV=production pnpm build && NODE_ENV=production node dist/index.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.1",
