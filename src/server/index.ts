@@ -1,11 +1,16 @@
 import axios from "axios";
 import express, { Express, Request, Response } from "express";
 import { config } from "./config";
+import { webpackMiddleware } from "./middlewares/webpackMiddleware";
 import { render } from "./render";
 
 const app: Express = express();
 
-app.use(express.static("dist"));
+if (process.env.NODE_ENV === "development") {
+  app.use(webpackMiddleware());
+} else {
+  app.use(express.static("dist"));
+}
 
 app.get("/galaxias", async (req: Request, res: Response) => {
   try {

@@ -17,7 +17,6 @@ export const render = (url: string, initialProps = {}) => {
       )
     );
     const styleTags = sheet.getStyleTags();
-    console.log(styleTags);
     const html = template(stream, initialProps, styleTags);
     return html;
   } catch (error) {
